@@ -1,6 +1,3 @@
-#ifndef sploit_h
-#define sploit_h
-
+#include <mach/mach.h>
 void vfs_sploit(void);
-
-#endif
+extern mach_port_t empty_list_tfp0;
